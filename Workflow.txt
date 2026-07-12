@@ -1,0 +1,51 @@
+Stage 1 — Data Acquisition
+
+Pull unemployment, poverty rate, and median household income from FRED via API — one call per state per series, or a loop across all 50 states × 3 series
+Pull DOL minimum wage history (effective-date table)
+Output: 4 raw files/dataframes, unmerged, in their native shapes
+
+Stage 2 — Cleaning & Annualization
+
+Unemployment: collapse monthly → annual (decide: calendar-year average, or December value, or fiscal-year alignment)
+Minimum wage: collapse effective-date changes → one value per state-year (decide: Jan 1 rate vs. hours-weighted average — you flagged this as still open)
+Standardize state identifiers across all four sources (FIPS code or consistent abbreviation — FRED and DOL may not use the same convention)
+Handle missing values / years where data doesn't exist for a given state
+Output: 4 clean, annual, state-year tables using the same state key
+
+Stage 3 — Merge into Panel
+
+Join all four on (state, year) into a single long-format panel dataframe
+One row per state-year, columns: unemployment, min_wage, poverty, income
+Confirm no duplicate or missing state-year combinations before moving on
+Output: one master panel dataframe — this is the core analytical asset the rest of the project depends on
+
+Stage 4 — EDA
+
+Time series plots: minimum wage trajectories by state, highlighting which states exceed the federal floor and when
+Distribution checks on each outcome variable
+Simple pre/post visual comparison (states that raised wages vs. those that didn't) before any regression — this is often the plot that ends up in the exec summary
+Output: a handful of charts, sanity-checked data
+
+Stage 5 — Modeling (3 separate regressions, same panel)
+
+Panel regression with state and year fixed effects, once per outcome (unemployment, poverty, income) — same X (minimum wage), three different Y
+Likely tool: linearmodels.PanelOLS or statsmodels with entity/time dummies
+Extract: coefficient, p-value, direction for each
+Output: 3 sets of regression results
+
+Stage 6 — Interpretation
+
+Translate each coefficient into plain language (direction, significance, magnitude in real terms — e.g., "a $1 increase associated with X pp change in poverty")
+Cross-check the three findings against each other for the "Combined Picture" narrative
+Output: filled-in findings, ready to drop into the brief
+
+Stage 7 — Deliverable Assembly
+
+Fill every bracketed placeholder in the policy brief doc with real numbers and interpretation
+Finalize Limitations section with anything you discovered along the way that wasn't anticipated (e.g., data gaps, weird outliers)
+Output: final policy brief
+
+Stage 8 — Resume/Portfolio Wrap-up
+
+Rewrite resume bullet #3 (Minimum Wage project) to match the actual finding and the policy-brief framing
+Push clean code + brief to GitHub

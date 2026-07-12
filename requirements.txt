@@ -1,0 +1,9 @@
+fredapi
+pandas
+numpy
+matplotlib
+seaborn
+statsmodels
+linearmodels
+jupyter
+python-docx
