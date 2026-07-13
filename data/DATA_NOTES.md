@@ -1,6 +1,6 @@
 # Data Cleaning & Panel Construction Notes
 
-Documents every  key judgment call made while building the state-year panel, so the
+Documents every key judgment call made while building the state-year panel, so the
 reasoning survives after the code is forgotten.
 
 ## Data Sources
