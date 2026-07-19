@@ -1,8 +1,0 @@
-Line chart: national average effective minimum wage over time vs. federal floor — shows the growing divergence clearly
-Line chart: national average unemployment, poverty rate, and median income over 30 years — contextualizes the outcomes
-Scatter plot: effective minimum wage vs. unemployment rate, one point per state-year, colored by decade — the raw relationship before any controls
-Box plot: unemployment rate distribution for states above vs. at the federal floor — a simple, clean preview of whether the groups look different
-Time series by state — plot effective_min_wage over time for a handful of states, some that raised well above federal, some that stayed at federal. This is the chart that visually motivates the whole project before any regression exists.
-Treatment vs. control snapshot — split states into "raised above federal at some point in the window" vs. "stayed at federal the whole time," and plot average pct_unemployed (or poverty, or income) for each group over time. This rough visual comparison is often the most persuasive chart in the final brief, even though the regression is the real evidence.
-Distribution checks — histograms of each outcome variable, just to know what you're working with (e.g., is unemployment roughly normal, are there extreme outliers).
-Correlation table across your four variables — cheap, quick, and a natural thing to reference in your Methodology section.
