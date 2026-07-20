@@ -22,6 +22,9 @@ across 50 states and 30 years (1995-2024):
 
 - **Unemployment:** no statistically significant relationship with minimum wage
   (coefficient: 0.036, p = 0.312).
+
+![Unemployment ~ Minimum Wage](figures/04_minwage_unemployment.png)
+
 - **Poverty rate:** no statistically significant relationship with minimum wage
   (coefficient: 0.025, p = 0.690).
 - **Median household income:** a statistically significant positive relationship
