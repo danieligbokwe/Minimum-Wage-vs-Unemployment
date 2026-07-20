@@ -1,4 +1,5 @@
-# Minimum Wage vs. Unemployment: A State-Level Panel Analysis
+
+# Minimum Wage Policy in the United States: A State-Level Panel Analysis (1995-2024)
 
 **Research question:** Do U.S. states that raise their minimum wage above the federal floor
 experience measurably different outcomes in unemployment, poverty, and median household
@@ -7,34 +8,64 @@ income, once state and year fixed effects are controlled for?
 Framed as a policy brief for a media-client audience, connecting the empirical evidence to
 the active Raise the Wage Act, which proposes a $17 federal minimum wage.
 
-**Demonstrates:** panel data construction from a public API, handling real government data
-gaps, causal inference methodology (fixed effects, clustered standard errors), and honest
-reporting of null results for a non-technical audience.
-
 ![Minimum wage trajectories across six states, 1995-2024](figures/01_min_wage_trajectory.png)
 
-![Same unemployment trend](figures/02_unemployment_overlay.png)
+## Skills Demonstrated
 
-## Summary of Findings
+`Python` `pandas` `NumPy` `matplotlib` `seaborn` `linearmodels` `FRED API`
+`Git` `Jupyter`
 
-Using panel regression with state and year fixed effects and clustered standard errors,
-across 50 states and 30 years (1995-2024):
+- API-based data acquisition and panel construction from a public government source
+- Diagnosing and resolving a real data production gap (Census SAIPE), not a synthetic one
+- Causal inference methodology: two-way fixed effects, clustered standard errors
+- Statistical inference and honest reporting of null results
+- Data visualization for a non-technical audience
+- Reproducible, documented analytical pipeline
 
-- **Unemployment:** no statistically significant relationship with minimum wage
-  (coefficient: 0.036, p = 0.312).
+## Key Results
 
-![Unemployment ~ Minimum Wage](figures/04_minwage_unemployment.png)
+- **Unemployment:** no statistically significant relationship with minimum wage.
+- **Poverty rate:** no statistically significant relationship with minimum wage.
+- **Median household income:** a statistically significant positive relationship,
+  read as associative rather than causal.
+- Based on 1,500 observations across 50 U.S. states, 1995-2024.
 
-- **Poverty rate:** no statistically significant relationship with minimum wage
-  (coefficient: 0.025, p = 0.690).
-- **Median household income:** a statistically significant positive relationship
-  (coefficient: 1265.50, p = 0.0001; 95% CI: 635.53 to 1895.50), though this magnitude
-  likely reflects broader wage growth correlated with minimum wage policy, not a purely
-  mechanical pass-through, and should be read as associative rather than causal.
+| Outcome           | Coefficient | P-value | 95% CI            | Result                |
+| ----------------- | ----------- | ------- | ----------------- | --------------------- |
+| Unemployment (%)  | 0.036       | 0.312   | -0.034 to 0.107   | Not significant       |
+| Poverty rate (%)  | 0.025       | 0.690   | -0.099 to 0.150   | Not significant       |
+| Median income ($) | 1265.50     | 0.0001  | 635.53 to 1895.50 | Significant, positive |
 
 Full findings, framing, and limitations in `output/Minimum_Wage_Policy_Brief.pdf`, which
 includes a References section citing all literature referenced above (Card & Krueger, NBER,
 Peterson Institute, Upjohn Institute, and primary government sources).
+
+## Pipeline
+
+```
+FRED API
+   |
+   v
+fetch_fred.py            (Stage 1: acquisition)
+   |
+   v
+Raw CSVs (data/raw/)
+   |
+   v
+01__cleaning.ipynb        (Stage 2-3: clean, annualize, merge)
+   |
+   v
+state_panel_1995_2024.csv (data/processed/)
+   |
+   v
+02_eda.ipynb               (Stage 4: exploratory analysis)
+   |
+   v
+03_modeling.ipynb           (Stage 5: fixed-effects regressions)
+   |
+   v
+Policy Brief + Figures      (output/, figures/)
+```
 
 ## Data
 
@@ -63,6 +94,11 @@ standard errors by state. Three separate regressions, one per outcome (unemploym
 poverty, income), same independent variable (effective minimum wage, defined as the higher
 of the state and federal rate for that year).
 
+## Figures
+
+![Unemployment across the same six states](figures/02_unemployment_overlay.png)
+![Raw relationship: minimum wage vs. unemployment](figures/04_minwage_unemployment.png)
+
 ## Repo Structure
 
 ```
@@ -71,7 +107,7 @@ of the state and federal rate for that year).
 |   |-- processed/              # cleaned, merged state-year panel
 |   `-- DATA_NOTES.md           # every cleaning/scoping decision, with reasoning
 |-- src/
-|   |-- fetch_fred.py           # Stage 1: data acquisition
+|   `-- fetch_fred.py           # Stage 1: data acquisition
 |-- notebooks/
 |   |-- 01__cleaning.ipynb      # Stage 2-3: clean, annualize, merge into panel
 |   |-- 02_eda.ipynb            # Stage 4: exploratory analysis
