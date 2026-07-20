@@ -38,7 +38,7 @@ the active Raise the Wage Act, which proposes a $17 federal minimum wage.
 | Poverty rate (%)  | 0.025       | 0.690   | -0.099 to 0.150   | Not significant       |
 | Median income ($) | 1265.50     | 0.0001  | 635.53 to 1895.50 | Significant, positive |
 
-Full findings, framing, and limitations in `output/Minimum_Wage_Policy_Brief.pdf`, which
+Full findings, framing, and limitations in [`output/Minimum_Wage_Policy_Brief.pdf`](output/Minimum_Wage_Policy_Brief.pdf) which
 includes a References section citing all literature referenced above (Card & Krueger, NBER,
 Peterson Institute, Upjohn Institute, and primary government sources).
 
@@ -133,5 +133,5 @@ python src/fetch_fred.py                 # Stage 1: pulls raw data into data/raw
 
 ## Limitations
 
-See the Limitations section of the policy brief (`output/Minimum_Wage_Policy_Brief.pdf`)
+See the Limitations section of the policy brief ([`output/Minimum_Wage_Policy_Brief.pdf`](output/Minimum_Wage_Policy_Brief.pdf))
 for a full discussion of what this analysis can and cannot conclude.
