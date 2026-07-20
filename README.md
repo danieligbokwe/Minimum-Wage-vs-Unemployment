@@ -68,8 +68,7 @@ of the state and federal rate for that year).
 |   |-- processed/              # cleaned, merged state-year panel
 |   `-- DATA_NOTES.md           # every cleaning/scoping decision, with reasoning
 |-- src/
-|   |-- style.py                # shared color palette + matplotlib theme
-|   `-- fetch_fred.py           # Stage 1: data acquisition
+|   |-- fetch_fred.py           # Stage 1: data acquisition
 |-- notebooks/
 |   |-- 01__cleaning.ipynb      # Stage 2-3: clean, annualize, merge into panel
 |   |-- 02_eda.ipynb            # Stage 4: exploratory analysis
