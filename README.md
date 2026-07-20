@@ -1,3 +1,4 @@
+
 # Minimum Wage vs. Unemployment: A State-Level Panel Analysis
 
 **Research question:** Do U.S. states that raise their minimum wage above the federal floor
@@ -5,21 +6,23 @@ experience measurably different outcomes in unemployment, poverty, and median ho
 income, once state and year fixed effects are controlled for?
 
 Framed as a policy brief for a media-client audience, connecting the empirical evidence to
-the active Warren-Murphy $17 federal minimum wage proposal.
+the active Raise the Wage Act, which proposes a $17 federal minimum wage.
 
 ## Summary of Findings
 
 Using panel regression with state and year fixed effects and clustered standard errors,
 across 50 states and 30 years (1995-2024):
 
-* **Unemployment:** no statistically significant relationship with minimum wage
+- **Unemployment:** no statistically significant relationship with minimum wage
   (coefficient: 0.036, p = 0.312).
-* **Poverty rate:** no statistically significant relationship with minimum wage
+- **Poverty rate:** no statistically significant relationship with minimum wage
   (coefficient: 0.025, p = 0.690).
-* **Median household income:** a statistically significant positive relationship
+- **Median household income:** a statistically significant positive relationship
   (coefficient: 1265.50, p = 0.0001; 95% CI: 635.53 to 1895.50) -- though this magnitude
   likely reflects broader wage growth correlated with minimum wage policy, not a purely
   mechanical pass-through, and should be read as associative rather than causal.
+
+Full findings, framing, and limitations in `output/Minimum_Wage_Policy_Brief.docx`.
 
 ## Data
 
