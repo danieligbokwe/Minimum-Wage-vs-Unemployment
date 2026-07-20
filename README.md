@@ -1,4 +1,3 @@
-
 # Minimum Wage vs. Unemployment: A State-Level Panel Analysis
 
 **Research question:** Do U.S. states that raise their minimum wage above the federal floor
@@ -14,6 +13,8 @@ reporting of null results for a non-technical audience.
 
 ![Minimum wage trajectories across six states, 1995-2024](figures/01_min_wage_trajectory.png)
 
+![Same unemployment trend](figures/02_unemployment_overlay.png)
+
 ## Summary of Findings
 
 Using panel regression with state and year fixed effects and clustered standard errors,
@@ -28,7 +29,7 @@ across 50 states and 30 years (1995-2024):
   likely reflects broader wage growth correlated with minimum wage policy, not a purely
   mechanical pass-through, and should be read as associative rather than causal.
 
-Full findings, framing, and limitations in `output/Minimum_Wage_Policy_Brief.docx`, which
+Full findings, framing, and limitations in `output/Minimum_Wage_Policy_Brief.pdf`, which
 includes a References section citing all literature referenced above (Card & Krueger, NBER,
 Peterson Institute, Upjohn Institute, and primary government sources).
 
@@ -75,7 +76,7 @@ of the state and federal rate for that year).
 |   `-- 03_modeling.ipynb       # Stage 5: fixed-effects regressions
 |-- figures/                    # exported chart PNGs
 `-- output/
-    `-- Minimum_Wage_Policy_Brief.docx
+    `-- Minimum_Wage_Policy_Brief.pdf
 ```
 
 ## Reproducing
@@ -93,5 +94,5 @@ python src/fetch_fred.py                 # Stage 1: pulls raw data into data/raw
 
 ## Limitations
 
-See the Limitations section of the policy brief (`output/Minimum_Wage_Policy_Brief.docx`)
+See the Limitations section of the policy brief (`output/Minimum_Wage_Policy_Brief.pdf`)
 for a full discussion of what this analysis can and cannot conclude.
