@@ -10,6 +10,8 @@ the active Raise the Wage Act, which proposes a $17 federal minimum wage.
 
 ![Minimum wage trajectories across six states, 1995-2024](figures/01_min_wage_trajectory.png)
 
+![Unemployment across the same six states](figures/02_unemployment_overlay.png)
+
 ## Skills Demonstrated
 
 `Python` `pandas` `NumPy` `matplotlib` `seaborn` `linearmodels` `FRED API`
@@ -94,9 +96,8 @@ standard errors by state. Three separate regressions, one per outcome (unemploym
 poverty, income), same independent variable (effective minimum wage, defined as the higher
 of the state and federal rate for that year).
 
-## Figures
+## Minimum Wage ~ Unemployment
 
-![Unemployment across the same six states](figures/02_unemployment_overlay.png)
 ![Raw relationship: minimum wage vs. unemployment](figures/04_minwage_unemployment.png)
 
 ## Repo Structure
