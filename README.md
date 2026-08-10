@@ -95,10 +95,6 @@ standard errors by state. Three separate regressions, one per outcome (unemploym
 poverty, income), same independent variable (effective minimum wage, defined as the higher
 of the state and federal rate for that year).
 
-## Minimum Wage ~ Unemployment
-
-![Raw relationship: minimum wage vs. unemployment](figures/04_minwage_unemployment.png)
-
 ## Repo Structure
 
 ```
@@ -107,11 +103,11 @@ of the state and federal rate for that year).
 |   |-- processed/              # cleaned, merged state-year panel
 |   `-- DATA_NOTES.md           # every cleaning/scoping decision, with reasoning
 |-- src/
-|   `-- fetch_fred.py           # Stage 1: data acquisition
+|   `-- fetch_fred.py           # data acquisition
 |-- notebooks/
-|   |-- 01__cleaning.ipynb      # Stage 2-3: clean, annualize, merge into panel
-|   |-- 02_eda.ipynb            # Stage 4: exploratory analysis
-|   `-- 03_modeling.ipynb       # Stage 5: fixed-effects regressions
+|   |-- 01__cleaning.ipynb      # clean, annualize, merge into panel
+|   |-- 02_eda.ipynb            # exploratory analysis
+|   `-- 03_modeling.ipynb       # fixed-effects regressions
 |-- figures/                    # exported chart PNGs
 `-- output/
     `-- Minimum_Wage_Policy_Brief.pdf
