@@ -47,22 +47,22 @@ Peterson Institute, Upjohn Institute, and primary government sources).
 FRED API
    |
    v
-fetch_fred.py            (Stage 1: acquisition)
+fetch_fred.py            (acquisition)
    |
    v
 Raw CSVs (data/raw/)
    |
    v
-01__cleaning.ipynb        (Stage 2-3: clean, annualize, merge)
+01__cleaning.ipynb        (clean, annualize, merge)
    |
    v
 state_panel_1995_2024.csv (data/processed/)
    |
    v
-02_eda.ipynb               (Stage 4: exploratory analysis)
+02_eda.ipynb               (exploratory analysis)
    |
    v
-03_modeling.ipynb           (Stage 5: fixed-effects regressions)
+03_modeling.ipynb           (fixed-effects regressions)
    |
    v
 Policy Brief + Figures      (output/, figures/)
