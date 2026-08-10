@@ -1,4 +1,3 @@
-
 # Minimum Wage Policy in the United States: A State-Level Panel Analysis (1995-2024)
 
 **Research question:** Do U.S. states that raise their minimum wage above the federal floor
