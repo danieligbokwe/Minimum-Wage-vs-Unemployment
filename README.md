@@ -5,7 +5,7 @@ experience measurably different outcomes in unemployment, poverty, and median ho
 income, once state and year fixed effects are controlled for?
 
 Framed as a policy brief for a media-client audience, connecting the empirical evidence to
-the active Raise the Wage Act, which proposes a $17 federal minimum wage.
+the proposed Raise the Wage Act, which would raise the federal minimum wage to $17.
 
 ![Minimum wage trajectories across six states, 1995-2024](figures/01_min_wage_trajectory.png)
 
