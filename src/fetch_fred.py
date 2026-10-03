@@ -11,12 +11,17 @@ Requires a free FRED API key: https://fred.stlouisfed.org/docs/api/api_key.html
 Set it as an environment variable rather than hardcoding it:
     export FRED_API_KEY="your_key_here"
 
-Install dependency:
-    pip install fredapi
+Install dependencies:
+    pip install -r requirements.txt
+
+Run from the project root:
+    python src/fetch_fred.py
 """
 
 import os
 import time
+from pathlib import Path
+
 import pandas as pd
 from fredapi import Fred
 from dotenv import load_dotenv
@@ -30,6 +35,8 @@ if not FRED_API_KEY:
     )
 
 fred = Fred(api_key=FRED_API_KEY)
+
+RAW_DIR = Path(__file__).resolve().parents[1] / "data" / "raw"
 
 # ---------------------------------------------------------------------------
 # State abbreviation -> 2-digit FIPS code (needed only for the poverty series)
@@ -114,7 +121,7 @@ def fetch_all_states(pause_seconds: float = 1.0) -> pd.DataFrame:
     columns = [state, year, unemployment, min_wage, median_income, poverty_rate]
 
     NOTE: unemployment is monthly — this function keeps it monthly here;
-    annualizing (Stage 2) happens in clean_merge.py, not here. Stage 1's job
+    annualizing (Stage 2) happens in notebooks/01_cleaning.ipynb, not here. Stage 1's job
     is just getting clean raw pulls onto disk, one file per variable.
     """
     records = []
@@ -130,7 +137,7 @@ def fetch_all_states(pause_seconds: float = 1.0) -> pd.DataFrame:
     return records
 
 
-def save_raw(records, raw_dir="../data/raw"):
+def save_raw(records, raw_dir=RAW_DIR):
     """Save each variable as its own long-format CSV: state, date, value."""
     os.makedirs(raw_dir, exist_ok=True)
 
@@ -151,4 +158,4 @@ def save_raw(records, raw_dir="../data/raw"):
 if __name__ == "__main__":
     records = fetch_all_states()
     save_raw(records)
-    print("Stage 1 (FRED) complete. Raw files are in ../data/raw/.")
+    print(f"Stage 1 (FRED) complete. Raw files are in {RAW_DIR}.")
