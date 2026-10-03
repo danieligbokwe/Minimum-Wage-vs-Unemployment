@@ -12,7 +12,7 @@
 | **Data** | 1,500 state-year observations (50 states x 1995-2024), pulled from the FRED API |
 | **Method** | Two-way fixed-effects panel regression (state + year), standard errors clustered by state |
 | **Audience** | Policy brief for a media client, tied to the proposed Raise the Wage Act, which would raise the federal minimum wage to $17 |
-| **Deliverable** | [Policy brief (PDF)](output/Minimum_Wage_Policy_Brief.pdf) · [Cleaning](notebooks/01_cleaning.ipynb) · [EDA](notebooks/02_eda.ipynb) · [Modeling](notebooks/03_modeling.ipynb) |
+| **Deliverable** | [Policy brief (PDF)](output/Minimum_Wage_Policy_Brief.pdf) · [Word](output/Minimum_Wage_Policy_Brief.docx) · [Cleaning](notebooks/01_cleaning.ipynb) · [EDA](notebooks/02_eda.ipynb) · [Modeling](notebooks/03_modeling.ipynb) |
 
 ---
 
